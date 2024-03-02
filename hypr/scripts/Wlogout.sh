@@ -1,5 +1,14 @@
 #!/bin/bash
 ## /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
 
-# Set parameters based on screen resolution and scaling factor
-wlogout &
+# wlogout (Power, Screen Lock, Suspend, etc)
+
+# Check if wlogout is already running
+if pgrep -x "wlogout" > /dev/null; then
+    pkill -x "wlogout"
+    exit 0
+fi
+
+echo "Detected Resolution: $resolution"
+
+    wlogout &

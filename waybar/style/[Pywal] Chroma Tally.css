@@ -8,13 +8,14 @@ font-family: "JetBrainsMono Nerd Font";
 font-weight: bold;
 min-height: 0;
 /* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
-font-size: 97%;
+font-size: 100%;
 font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
 padding: 1px;
 }
 
 window#waybar {
-    background: rgba (0, 0, 0, 0.5);
+    /*background: @background;*/
+    background: rgba (0, 0, 0, 0.6);
     border-radius: 12px;
 	border-bottom: 2px;
     border-style: solid;
@@ -22,7 +23,7 @@ window#waybar {
 }
 
 #workspaces button {
-    color: #eceff4;
+    color: @color2;
     box-shadow: none;
 	text-shadow: none;
     padding: 0px;
@@ -35,7 +36,8 @@ window#waybar {
 
 #workspaces button.active {
 	border-radius: 15px;
-	background-color: @color2;
+	background-color: @color1;
+    color:@color0;
     padding-left: 8px;
     padding-right: 8px;
     animation: gradient_f 20s ease-in infinite;
@@ -57,6 +59,7 @@ window#waybar {
 #bluetooth,
 #clock,
 #cpu,
+#custom-cpu,
 #disk,
 #idle_inhibitor,
 #keyboard-state,
@@ -82,7 +85,8 @@ window#waybar {
 #custom-power_vertical,
 #custom-power,
 #custom-swaync,
-#custom-updater,
+#custom-updates,
+#custom-cava_mviz,
 #custom-weather,
 #custom-weather.clearNight,
 #custom-weather.cloudyFoggyDay,
@@ -99,26 +103,74 @@ window#waybar {
 	padding-right: 6px;
 	padding-left: 6px;
 }
+
  
 /* -----------------------------------------------------------------------------
  * Module styles
  * -------------------------------------------------------------------------- */
 
- 
-#clock {
- color:#a3be8c;
+ #custom-updates{
+    color: @color2;
+ }
+
+ #custom-updates.green {
+    font-size: 0;
+    margin: 0;
+    padding: 0;
+    opacity:0;
 }
 
-#backlight {
-    color: #ebcb8b;
+#custom-updates.yellow {
+    color: @color2;
+}
+
+#custom-updates.red {
+    color: #dc2f2f;
+}
+
+ 
+#clock {
+ color:@color2;
+}
+
+#custom-cpu, #backlight {
+    color: @color2;
+}
+
+/* -----------------------------------------------------
+ * Insync Status
+ * ----------------------------------------------------- */
+
+ #custom-insync {
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-right: 12px;
+	padding-left: 6px;
+}
+
+#custom-insync.green {
+    color: @color2;
+}
+
+#custom-insync.yellow {
+    color: @color3;
+}
+
+#custom-insync.red {
+    color: #dc2f2f;
+}
+
+#custom-cpu.danger, #custom-cpu.warning{
+    color: #4c566a;
+    background-color: #bf616a;
 }
 
 #battery {
-    color: #d8dee9;
+    color: @color2;
 }
 
 #battery.charging {
-    color: #81a1c1;
+    color: yellow;
 }
 
 @keyframes blink {
@@ -139,7 +191,7 @@ window#waybar {
 }
 
 #cpu {
-    color: #a3be8c;
+    color: @color2;
 }
 
 #disk {
@@ -156,7 +208,7 @@ window#waybar {
 }
 
 #network{
-    color:#a3be8c;
+    color:@color2;
 }
 
 #network.disconnected {
@@ -164,7 +216,7 @@ window#waybar {
 }
 
 #pulseaudio {
-    color: #04a5e5;
+    color: @color2;
 }
 
 #pulseaudio.muted {
@@ -182,10 +234,11 @@ window#waybar {
 
 #keyboard-state,
 #idle_inhibitor {
-   color: #ebcb8b;
+   color: @color2;
 }
 
 #tray {
+    color: @color2;
 }
 
 #custom-swaync,
@@ -193,7 +246,7 @@ window#waybar {
 	color: yellow;
 }
 #custom-power{
-    color: #eba0ac; 
+    color: @color2; 
 }
 
 #window{
@@ -202,7 +255,7 @@ window#waybar {
 
 #custom-lock,    
 #bluetooth{
-	color:#d08770;
+	color: @color2;
 }
 
 #custom-cava_mviz{

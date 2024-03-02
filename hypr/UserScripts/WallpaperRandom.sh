@@ -2,7 +2,7 @@
 ## /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
 # Script for Random Wallpaper ( CTRL ALT W)
 
-wallDIR="$HOME/Imagens/wallpapers"
+wallDIR="$HOME/Pictures/Wallpapers"
 scriptsDir="$HOME/.config/hypr/scripts"
 
 PICS=($(find ${wallDIR} -type f \( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" -o -name "*.gif" \)))

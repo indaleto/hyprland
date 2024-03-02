@@ -19,9 +19,16 @@
       "5": [],
     },
     "format-icons": {
-      "active": "",
-      "default": "",
-	},  
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+    },
+    //"format-icons": {
+    //  "active": "",
+    //  "default": "",
+	//},  
 },
 
 // Updates Count
@@ -204,7 +211,7 @@
       "critical": 15
              },
     "format": "{icon} {capacity}%",
-    "format-charging": "{capacity}%",
+    "format-charging": " {capacity}%",
     "format-plugged": "󱘖 {capacity}%",
 	"format-alt-click": "click",
     "format-full": "{icon} 100%",
@@ -216,6 +223,17 @@
     "on-click-middle": "~/.config/hypr/scripts/ChangeBlur.sh",
     "on-click-right": "~/.config/hypr/scripts/Wlogout.sh",
 },
+
+"custom/insync": {
+        "format": "",
+        "tooltip-format": "{}",
+        "escape": true,
+        "return-type": "json",
+        "exec": "~/.config/hypr/scripts/insyncStatus.sh",
+        "restart-interval": 60,
+        "on-click": "~/.config/hypr/scripts/toogleInsync.sh",
+        "tooltip": true
+    },
       
 "bluetooth": {
     "format": "",
@@ -368,8 +386,8 @@
         //"interface": "wlp1s0",
         "format": "{ifname}",
         //"format-wifi": "{essid} ({signalStrength}%) ",
-        "format-wifi": " {bandwidthTotalBytes}",
-        "format-ethernet": "{bandwidthTotalBytes} ",
+        "format-wifi": "  {bandwidthTotalBytes}",
+        "format-ethernet": "{ifname} ",
         "format-disconnected": "",
         "tooltip-format": "{ifname}",
         "tooltip-format-wifi": "{essid} - {ipaddr} - ({signalStrength}%) ",
@@ -409,6 +427,7 @@
     },
     "scroll-step": 5.0,
     "on-click": "~/.config/hypr/scripts/Volume.sh --toggle",
+    "on-click": "~/.config/hypr/scripts/Volume.sh --inc",
     "on-click-right": "pavucontrol -t 3",
     "on-scroll-up": "~/.config/hypr/scripts/Volume.sh --inc",
     "on-scroll-down": "~/.config/hypr/scripts/Volume.sh --dec",
@@ -474,7 +493,7 @@
 
  // CPU
     "custom/cpu": {
-        "format": " {}%",
+        "format": "  {}%",
         "tooltip-format": "{usage}",
         "escape": true,
         "return-type": "json",
@@ -538,10 +557,10 @@
 },
 
 // This is a custom cava visualizer
-"custom/cava_mviz": {
-    "exec": "~/.config/hypr/scripts/WaybarCava.sh",
-    "format": "{}"
-},
+//"custom/cava_mviz": {
+//    "exec": "~/.config/hypr/scripts/WaybarCava.sh",
+//    "format": "{}"
+//},
   
 "custom/playerctl": {
     "format": "<span>{}</span>",
